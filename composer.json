@@ -1,0 +1,19 @@
+{
+    "name" : "tjg/microframework",
+    "description": "Micro Framework MVC",
+    "license": "MIT",
+    "type": "project",
+    "authors": [
+        {"name": "gracione", "email": "gracione2017@gmail.com"}
+    ],
+    "autoload": {
+        "psr-4":{
+            "App\\": "app/",
+            "Core\\": "core/"
+        }
+    }
+    ,
+    "require":{
+        "php":">=7.4.3"
+    }
+}

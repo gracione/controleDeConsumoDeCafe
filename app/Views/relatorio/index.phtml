@@ -1,0 +1,28 @@
+<div class="container pt-2 col">
+    <div class="p-1 row d-flex justify-content-center">
+        <form class="col-md-8 col-9 d-flex justify-content-between" action="/relatorio" method="post">
+            <div class="input-group mb-3">
+                <input name="data" type="date" class="form-control" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" >Buscar data</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+    <div class="row m-0">
+        <?php
+        foreach ($this->view->vetor as $key => $value) {
+            foreach ($value as $key => $tipo) {
+                if ($tipo[0] > 0) {
+        ?>
+                    <div class="alert alert-info">
+                        <?php echo "Foi consumido " . $tipo[0] . "  " . $key . "<br>"; ?>
+                    </div>
+        <?php
+                }
+            }
+        }
+        ?>
+    </div>
+</div>

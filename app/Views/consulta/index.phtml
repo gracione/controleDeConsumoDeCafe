@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row mt-2 mb-2 d-flex justify-content-between">
+        <h1 class="h1 col">
+            <?php $this->getPageTitle(); ?>
+        </h1>
+        <a class="col-2 d-flex justify-content-end" href="/consultar/adicionarCafe">
+            <img src="/assets/img/adicionar.png" width="80px">
+        </a>
+    </div>
+
+    <?php foreach ($this->view->quantidade as $post) : ?>
+        <div class="alert alert-info d-flex justify-content-between ">
+            <div class="col h4">
+                <div class="row">
+                    <b class="col-2 text-end">Tipo:</b>
+                    <div class="col"><?php echo $post->tipo; ?></div>
+                </div>
+                <div class="row">
+                    <b class="col-2 text-end">Medida:</b>
+                    <div class="col"><?php echo $post->medida; ?></div>
+                </div>
+                <div class="row">
+                    <b class="col-2 text-end">Quantidade:</b>
+                    <div class="col"><?php echo $post->quantidade; ?></div>
+                </div>
+                <div class="row">
+                    <b class="col-2 text-end">Recepiente:</b>
+                    <div class="col"><?php echo $post->recepiente; ?></div>
+                </div>
+            </div>
+            <div class="col-1">
+                <a href="/consultar/<?php echo $post->id ?>/delete" class="">
+                    <img src="/assets/img/eliminar.png" width="80px">
+                </a>
+            </div>
+        </div>
+        <hr>
+    <?php endforeach; ?>
+</div>
